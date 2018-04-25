@@ -1,11 +1,15 @@
-import san from 'san'
+import san from 'san';
+import './index.css';
+import Icon from './icon.png';
 
 var MyApp = san.defineComponent({
-    template: '<p>Hello {{name}}!</p>',
+    template: '<div><p class="hello">Hello {{name}}!</p><img src="{{ImgUrl}}"/></div>',
 
     initData: function () {
+    	var ImgUrl = Icon;
         return {
-            name: 'San'
+            name: 'San',
+            ImgUrl:ImgUrl
         };
     }
 });

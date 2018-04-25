@@ -6,19 +6,35 @@ module.exports = {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname,'dist')
 	},
-	module: {
-        loaders: [
-            {
-                test: /\.san$/,
-                loader: 'san-loader'
-            }
-        ]
+    devServer: {
+        contentBase: './dist',
+        port: 8081
     },
-    resolve: {
-        alias: {
-            san: process.env.NODE_ENV === 'production'
-                ? 'san/dist/san.js'
-                : 'san/dist/san.dev.js'
-        }
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
+           },{
+            test: /\.san$/,
+            use: [
+                'san-loader'
+            ]
+           }
+        ]
     }
 }
