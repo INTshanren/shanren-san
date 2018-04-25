@@ -1,0 +1,30 @@
+{
+  "name": "shanren-san",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INTshanren/shanren-san.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/INTshanren/shanren-san/issues"
+  },
+  "homepage": "https://github.com/INTshanren/shanren-san#readme",
+  "devDependencies": {
+    "san-loader": "0.0.7",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "dependencies": {
+    "san": "^3.5.7"
+  }
+}
